@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({
     origin: function (origin, callback) {
         const allowedOrigins = [
-            'https://library1-3epi.vercel.app',
+            'https://library1-pmam.vercel.app',
             'http://localhost:3000'
         ];
 
@@ -33,6 +33,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.options(/.*/, cors());
 app.use(cors());
 app.use("/api/dashboard",dashboardRoutes);
 app.use("/api/books", bookRoutes);
